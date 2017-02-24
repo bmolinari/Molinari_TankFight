@@ -22,15 +22,20 @@ void ATank::BeginPlay()
 }
 
 // Called to bind functionality to input
-void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
+void ATank::SetupPlayerInputComponent(class UInputComponent* inputComponent)
 {
-	Super::SetupPlayerInputComponent(InputComponent);
+	Super::SetupPlayerInputComponent(inputComponent);
 
 }
 
 void ATank::SetBarrelReference(UTankBarrel* Value)
 {
 	TankAimingComponent->SetBarrelReference(Value);
+}
+
+void ATank::SetTurretReference(UTankTurret* Value)
+{
+	TankAimingComponent->SetTurretReference(Value);
 }
 
 void ATank::AimAt(FVector HitLocation)

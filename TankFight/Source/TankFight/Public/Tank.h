@@ -8,16 +8,23 @@
 
 class UTankBarrel;
 class UTankAimingComponent;
+class UTankTurret;
 
 UCLASS()
 class TANKFIGHT_API ATank : public APawn
 {
 	GENERATED_BODY()
 public:
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* inputComponent) override;
 	void AimAt(FVector);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* Value);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetTurretReference(UTankTurret* Value);
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
@@ -29,11 +36,10 @@ private:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+	
 
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 100000; // TODO find sensible default
+	float LaunchSpeed = 8000; // TODO find sensible default
 
 	
 	

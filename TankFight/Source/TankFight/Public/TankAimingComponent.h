@@ -7,6 +7,7 @@
 
 // Forward Declaration
 class UTankBarrel;
+class UTankTurret;
 
 // Hold Barrel Properties and Functions
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -25,6 +26,7 @@ public:
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 	void SetBarrelReference(UTankBarrel* Value);
+	void SetTurretReference(UTankTurret* Value);
 
 	// TODO SetTurret
 
@@ -32,5 +34,7 @@ public:
 
 private:
 	UTankBarrel* Barrel = nullptr;
+	UTankTurret* Turret = nullptr;
 	void MoveBarrelTowards(FVector);
+	void MoveTurretTowards(FVector);
 };
