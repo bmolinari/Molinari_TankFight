@@ -42,3 +42,9 @@ void ATank::AimAt(FVector HitLocation)
 {
 	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
 }
+
+void ATank::FireProjectile()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Firing Tank!"));
+
+}

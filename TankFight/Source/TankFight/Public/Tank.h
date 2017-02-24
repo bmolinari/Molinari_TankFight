@@ -26,6 +26,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurretReference(UTankTurret* Value);
 
+	UFUNCTION(BlueprintCallable, Category = Action)
+	void FireProjectile();
+
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
@@ -36,6 +39,7 @@ private:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	
 	
 
 	UPROPERTY(EditAnywhere, Category = Firing)
