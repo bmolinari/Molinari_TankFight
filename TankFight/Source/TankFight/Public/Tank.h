@@ -9,6 +9,7 @@
 class UTankBarrel;
 class UTankAimingComponent;
 class UTankTurret;
+class AProjectile;
 
 UCLASS()
 class TANKFIGHT_API ATank : public APawn
@@ -39,12 +40,15 @@ private:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	
-	
-
 	UPROPERTY(EditAnywhere, Category = Firing)
 	float LaunchSpeed = 8000; // TODO find sensible default
 
+	UPROPERTY(EditAnywhere, Category = Setup)
+	TSubclassOf<AProjectile> Projectile;
+	//UClass* ProjectileBluePrint;
+
+
+	UTankBarrel* Barrel = nullptr;
 	
 	
 };
