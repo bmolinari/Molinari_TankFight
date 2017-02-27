@@ -28,13 +28,13 @@ private:
 	bool GetLookDirection(FVector2D, FVector& ) const;
 	bool GetLookVectorHitLocation(FVector2D, FVector&) const;
 
-	UPROPERTY(EditAnyWhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CrossHairXLocation = 0.5f;
 
-	UPROPERTY(EditAnyWhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CrossHairYLocation = 0.33333f;
 
-	UPROPERTY(EditAnyWhere)
+	UPROPERTY(EditDefaultsOnly)
 	float RayTraceRange = 10000;
 
 	
