@@ -32,6 +32,7 @@ public:
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
+	
 
 private:
 	// Sets default values for this pawn's properties
@@ -47,8 +48,8 @@ private:
 	TSubclassOf<AProjectile> Projectile;
 	//UClass* ProjectileBluePrint;
 
-
 	UTankBarrel* Barrel = nullptr;
-	
-	
+		
+	float ReloadTimeInSeconds = 3;
+	double LastFireTime = 0;
 };
