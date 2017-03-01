@@ -2,6 +2,7 @@
 
 #include "TankFight.h"
 #include "TankBarrel.h"
+#include "TankTrack.h"
 #include "Projectile.h"
 #include "TankAimingComponent.h"
 #include "Tank.h"
@@ -41,6 +42,16 @@ void ATank::SetTurretReference(UTankTurret* Value)
 {
 	TankAimingComponent->SetTurretReference(Value);
 }
+
+//void ATank::SetRightTrackReference(UTankTrack* Value);
+//{
+//	RightTrack = Value;
+//}
+//
+//void ATank::SetLeftTrackReference(UTankTrack* Value);
+//{
+//	LeftTrack = Value;
+//}
 
 void ATank::AimAt(FVector HitLocation)
 {

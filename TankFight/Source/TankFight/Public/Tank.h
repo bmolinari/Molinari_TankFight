@@ -6,9 +6,10 @@
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
-class UTankBarrel;
 class UTankAimingComponent;
+class UTankBarrel;
 class UTankTurret;
+class UTankTrack;
 class AProjectile;
 
 UCLASS()
@@ -26,6 +27,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurretReference(UTankTurret* Value);
+	
+	/*UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetRightTrackReference(UTankTrack* Value);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetLeftTrackReference(UTankTrack* Value);*/
 
 	UFUNCTION(BlueprintCallable, Category = Action)
 	void FireProjectile();
@@ -54,6 +61,8 @@ private:
 	//UClass* ProjectileBluePrint;
 
 	UTankBarrel* Barrel = nullptr;
+	UTankTrack* LeftTrack = nullptr;
+	UTankTrack* RightTrack = nullptr;
 		
 	
 };
