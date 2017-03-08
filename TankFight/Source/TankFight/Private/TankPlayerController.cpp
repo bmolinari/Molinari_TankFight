@@ -7,15 +7,6 @@ void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 	MyTank = GetControlledTank();
-	if (MyTank)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("%s Begin Play"), *MyTank->GetName());
-
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Player Tank is missing!"))
-	}
 
 }
 
